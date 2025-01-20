@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* 基本 */
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    background-color: antiquewhite;
+    letter-spacing: 0.05em;
+
+    /* body全体をflexにしたい時 */
+    margin: 0;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.index {
+    background-image: url(../img/portfolio_main.png);
+    background-size: 100%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media(min-width:768px) {
+    body.index {
+        background-size: 50%;
+    }
+
+    nav {
+        font-size: 1.3em;
+    }
+}
+
+h1,
+p {
+    margin: 0;
+}
+
+
+
+/* 横幅と左右の余白 */
+.w-container {
+    width: min(92%, 1166px);
+    margin: auto;
+}
+
+/* ヘッダー */
+.header1 {
+    height: 112px;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    /* line-height: 2em; */
+    font-weight: bold;
+    margin-top: 70px;
+    font-size: 2em;
+    gap: 30px;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+
+}
+
+li a {
+    color: #918d40;
+    text-decoration: none;
+    transition: all 0.5s 2s ease;
+}
+
+/* ヒーローエリア */
+.hero {
+    margin-top: 70px;
+    height: 20%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 500px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 5vw, 70px);
+    min-height: 0vw;
+    font-weight: 400;
+    line-height: 1.4;
+    /* text-align: center; */
+}
+
+footer {
+    background-color: black;
+    color: white;
+    line-height: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    z-index: 100;
+
+    display: block;
+    position: relative;
+
+    top: 100vh;
+}
+
+.footer {
+    margin-top: -600px;
+}
+
+/* worksはここから */
+figcaption p {
+    display: inline-block;
+    margin: 10px;
+}
+
+
+
+
+figure .img {
+    overflow: hidden;
+}
+
+.img img {
+    transition: 1s all;
+}
+
+.img img:hover {
+    transition: 1s all;
+    transform: scale(1.2, 1.2);
+}
+
+figcaption p {
+    border: 1px solid #918d40;
+    color: white;
+    background-color: #918d40;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+@media(min-width:768px) {
+    .works {
+        display: grid;
+        grid-auto-flow: rows;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ページトップに戻る */
+#page-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: #737373;
+    border: solid 1px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px -6px rgba(0, 0, 0, .5), 0 3px 10px -4px rgba(0, 0, 0, .2);
+}
+
+/* aboutはここから */
+
+.header2 img {
+    object-fit: cover;
+    object-position: 0 60%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+@media(max-width:375px) {
+    .header2 img {
+        height: 300px;
+    }
+
+    .profile {
+        top: 500px;
+    }
+
+    .skl img {
+        width: 50%;
+        aspect-ratio: 1 /1;
+    }
+}
+
+.profile {
+    background-color: antiquewhite;
+    /* opacity: 0.8; */
+    display: block;
+    position: relative;
+    top: 800px;
+    padding: 70px 0;
+    z-index: 100;
+}
+
+.main article {
+    margin: 50px;
+}
+
+/* h1飾りつけ */
+.main h1 {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 70px;
+}
+
+.main span {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* h2飾りつけ */
+.main h2 {
+    position: relative;
+    padding-left: 1em;
+    font-size: 1.8em;
+}
+
+.main h2::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    content: '';
+    width: 20px;
+    height: 4px;
+    background-color: #918d40;
+}
+
+/* skillを並べる */
+.skill {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skl img {
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    aspect-ratio: 1 /1;
+}
+
+.skl {
+    border-right: 1px dotted;
+}
+
+.skl:last-child {
+    border: none;
+}
+
+/* skillのスマホ版 */
+@media(max-width:768px) {
+    .skill {
+        grid-template-columns: 1fr;
+    }
+
+    .skl {
+        border-right: none;
+        border-bottom: 1px dotted;
+    }
+
+    .skl img {
+        aspect-ratio: 1 /1;
+    }
+}
+
+/* h3飾りつけ */
+.strength h3 {
+    position: relative;
+    padding-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.strength h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background-color: #b99b00;
+    border-radius: 7px;
+}
+
+/* カーソル */
+html,
+body,
+a {
+    cursor: none;
+}
+
+/*独自のマウスカーソルを作成*/
+.cursor {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+    transform: translate(0, 0);
+    pointer-events: none;
+}
+
+/*aタグにホバーした時に見た目変化*/
+.cursor.cursor--hover {
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*動き確認用ボタン*/
+.btn {
+    display: inline-block;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    color: #fff;
+    background-color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* ここからworks内容 */
+.header3 nav {
+    position: fixed;
+    top: 0;
+}
+
+.works2 {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.container ul:nth-child(2) {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: min(92%, 900px);
+    margin: auto;
+}
+
+/* h1飾りつけ */
+.container h1 {
+    font-size: 35px;
+    line-height: 1;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    letter-spacing: 0.3em;
+}
+
+.container span {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* h2飾りつけ */
+.container ul h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #918d40;
+    letter-spacing: 0.1em;
+}
+
+/* sub内容 */
+.sub {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 80%;
+    border-radius: 10px;
+}
+
+.frame h2 {
+    letter-spacing: 0.3em;
+    margin-top: 50px;
+}
+
+.frame img {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 30px;
+}
