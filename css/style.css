@@ -418,5 +418,5 @@ a {
 
 .frame img {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin: 30px;
+    /* margin: 30px; */
 }
