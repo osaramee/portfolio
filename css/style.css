@@ -130,9 +130,6 @@ figcaption p {
     margin: 10px;
 }
 
-
-
-
 figure .img {
     overflow: hidden;
 }
@@ -183,6 +180,10 @@ figcaption p {
     position: fixed;
     top: 0;
     z-index: 10;
+}
+
+.header2 nav ul li {
+    z-index: 1000;
 }
 
 @media(max-width:375px) {
